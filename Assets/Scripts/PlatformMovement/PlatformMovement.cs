@@ -7,6 +7,7 @@ public class PlatformMovement : MonoBehaviour {
     public float scrollSpeed;
     public EndlessRunner er;
     bool hasSpawnedNext;
+    public float lenthOfPlatform;
 
     private void Awake()
     {
@@ -23,7 +24,10 @@ public class PlatformMovement : MonoBehaviour {
         //transform.position -= Vector3.right * (scrollSpeed * Time.deltaTime);
         //rb.MovePosition(transform.position + -transform.right * moveSpeedRB);
         Scroll();
-
+        if(transform.position.x <= 0 - lenthOfPlatform)
+        {
+            Destroy(gameObject);
+        }
         
 	}
 
