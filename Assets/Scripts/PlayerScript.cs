@@ -7,13 +7,17 @@ public class PlayerScript : MonoBehaviour {
     public Rigidbody rb;
     public float speed;
     public float jumpheight;
-    protected Collider coll; 
+    public float SlideTime;
+    private float Timer; 
+    protected Collider coll;
+    public GameObject player;
     public bool Canjump = false;
     public bool CanSlide = false;
     public bool CanAttack = false; 
     // Use this for initialization
     void Start () {
         coll = GetComponent<Collider>();
+        SlideTime = Timer; 
 	}
 
     // Update is called once per frame
@@ -28,6 +32,11 @@ public class PlayerScript : MonoBehaviour {
                 rb.AddForce(new Vector3(0, jumpheight, 0), ForceMode.Impulse);
                 Canjump = false;
             }
+        if (CanSlide == true)
+        {
+           SlideTime -= Time.deltaTime; 
+           player.SetActive(false);
+       }
     }
        
   public void Jump()
@@ -40,6 +49,12 @@ public class PlayerScript : MonoBehaviour {
     {
         //OnTriggerEnter(coll);
         CanAttack = true; 
+    }
+    public void Slide()
+    {
+        Update();
+        CanSlide = true;
+
     }
     private void OnTriggerStay(Collider coll)
     {
