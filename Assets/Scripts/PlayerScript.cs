@@ -20,11 +20,12 @@ public class PlayerScript : MonoBehaviour {
     void Update()
     {
         // if (Physics.Raycast(transform.position,downPosition))
-        if (Canjump == true)
             if (Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y))
             {
+            if (Canjump == true)
 
-                rb.AddForce(transform.up * jumpheight * 10);
+                // rb.AddForce(transform.up * jumpheight * 10);
+                rb.AddForce(new Vector3(0, jumpheight, 0), ForceMode.Impulse);
                 Canjump = false;
             }
     }
