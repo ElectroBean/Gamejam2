@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b3ef20e9134cd144785ffcbc87bec9e6
-timeCreated: 1523856367
+guid: 90ed323602a6c2c4681eac005ad12b0e
+timeCreated: 1523922126
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Wall
+    4300000: Floor
     9500000: //RootNode
   externalObjects: {}
   materials:
