@@ -7,7 +7,8 @@ public class PlayerScript : MonoBehaviour {
     public Rigidbody rb;
     public float speed;
     public float jumpheight;
-    public float SlideTime;
+    public float SlideTime; 
+    private float Sliding;
     private float Timer; 
     protected Collider coll;
     public GameObject player;
@@ -24,24 +25,35 @@ public class PlayerScript : MonoBehaviour {
     void Update()
     {
         // if (Physics.Raycast(transform.position,downPosition))
-            if (Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y))
-            {
+        if (Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y))
+        {
             if (Canjump == true)
-
+            {
                 // rb.AddForce(transform.up * jumpheight * 10);
                 rb.AddForce(new Vector3(0, jumpheight, 0), ForceMode.Impulse);
-                Canjump = false;
             }
+        }
+        Canjump = false;
+
         if (CanSlide == true)
         {
-           SlideTime -= Time.deltaTime; 
-           player.SetActive(false);
-       }
+            player.SetActive(false);
+            SlideTime += Time.deltaTime;
+
+            if (SlideTime >= 1)
+            {
+                player.SetActive(true);
+            }
+        }
+        if (rb.IsSleeping())
+        {
+            rb.WakeUp();
+        }
     }
        
   public void Jump()
     {
-        Update();
+        //Update();
         Canjump = true; 
     }
 
