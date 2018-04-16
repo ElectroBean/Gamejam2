@@ -7,30 +7,33 @@ public class PlayerScript : MonoBehaviour {
     public Rigidbody rb;
     public float speed;
     public float jumpheight;
-    public bool Ground = false; 
+    protected Collider coll; 
+    public bool Ground = false;
+    Ray myRay; 
     // Use this for initialization
     void Start () {
-		
+        coll = GetComponent<Collider>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        rb.AddForce(transform.right * speed);
-        if (Input.GetKey(KeyCode.Space) && Ground == true)
-        {
-            rb.AddForce(transform.up * jumpheight);
-            Ground = false;
-        }
 
+        // if (Physics.Raycast(transform.position,downPosition))
+
+       if ( Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y))
+            {
+              if (Input.GetKey(KeyCode.Space))
+                {
+                rb.AddForce(transform.up * jumpheight);
+            }
+        }
+     
        
-        //rb.velocity = new Vector3(speed, 0, 0);
 	}
 
-    private void OnCollisionEnter(Collision collision)
+  
+    public void ButtonClick()
     {
-        if (collision.transform.tag == "Ground")
-        {
-            Ground = true;
-        }
+       // Debug.Log("test");
     }
 }
