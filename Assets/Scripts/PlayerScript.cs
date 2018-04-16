@@ -16,9 +16,10 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         rb.AddForce(transform.right * speed);
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && Ground == true)
         {
             rb.AddForce(transform.up * jumpheight);
+            Ground = false;
         }
 
        
@@ -27,6 +28,9 @@ public class PlayerScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.transform.tag == "Ground")
+        {
+            Ground = true;
+        }
     }
 }
