@@ -23,9 +23,13 @@ public class PlayerScript : MonoBehaviour
     private bool isAlive = true;
 
     private AudioManager audMan;
+    public float walkSoundDelay;
+    public float attackSoundDelay;
     private float walkSoundTimer = 0.45f;
     private float attackSoundTimer = 0.3f;
     bool grounded;
+
+    bool startedSlide = false;
 
     protected Collider coll;
 
@@ -53,16 +57,16 @@ public class PlayerScript : MonoBehaviour
             if (walkSoundTimer <= 0)
             {
                 audMan.PlaySound("Walk");
-                walkSoundTimer = 0.45f;
+                walkSoundTimer = walkSoundDelay;
             }
         }
 
-        if(CanAttack)
+        if (CanAttack)
         {
-            if(attackSoundTimer <= 0)
+            if (attackSoundTimer <= 0)
             {
                 audMan.PlaySound("Attack");
-                attackSoundTimer = 0.3f;
+                attackSoundTimer = attackSoundDelay;
             }
         }
 
@@ -86,7 +90,7 @@ public class PlayerScript : MonoBehaviour
                 // rb.AddForce(transform.up * jumpheight * 10);
 
                 rb.velocity = Vector3.up * jumpheight;
-                foreach(AudioSource a in GetComponents<AudioSource>())
+                foreach (AudioSource a in GetComponents<AudioSource>())
                 {
                     a.Stop();
                 }
@@ -102,13 +106,18 @@ public class PlayerScript : MonoBehaviour
         if (CanSlide == true)
         {
             // player.SetActive(false);
+            if (startedSlide)
+            {
+                audMan.PlaySound("Slide");
+                startedSlide = false;
+            }
             player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
             SlideTime += Time.deltaTime;
-            audMan.PlaySound("Slide");
             if (SlideTime >= 1)
             {
                 //    player.SetActive(true);
                 CanSlide = false;
+                startedSlide = false;
                 SlideTime = Timer;
                 player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
 
@@ -135,6 +144,7 @@ public class PlayerScript : MonoBehaviour
     public void Slide()
     {
         Update();
+        startedSlide = true;
         CanSlide = true;
 
     }

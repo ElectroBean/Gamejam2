@@ -29,9 +29,12 @@ public class AudioManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.S))
+		foreach(AudioSource a in GetComponents<AudioSource>())
         {
-            PlaySound("Walk");
+            if (!a.isPlaying)
+            {
+                Destroy(a);
+            }
         }
 	}
 
@@ -131,5 +134,16 @@ public class AudioManager : MonoBehaviour {
                 audSource.Play();
                 break;
         }
+    }
+
+    public void CreateNewAud()
+    {
+        AudioSource newAud = gameObject.AddComponent<AudioSource>() as AudioSource;
+        int superSuperDuperRand = Random.Range(0, jumpClips.Length);
+        float superSuperduperRandPitch = Random.Range(pitchMin, pitchMax);
+        newAud.clip = attackClips[superSuperDuperRand];
+        newAud.pitch = superSuperduperRandPitch;
+
+        newAud.Play();
     }
 }
