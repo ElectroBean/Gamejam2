@@ -8,25 +8,26 @@ public class PlayerScript : MonoBehaviour {
     public Rigidbody rb;
     //player speed
     public float speed;
-    public float fallMulitplier; 
+    public float fallMulitplier;
     // Jump
     public float jumpheight;
     //how long the player will slide
-    public float SlideTime; 
+    public float SlideTime;
     //resets slide time
-    private float Timer; 
+    private float Timer;
 
     public bool Canjump = false;
     public bool CanSlide = false;
     public bool CanAttack = false;
+    public bool isAlive = true; 
 
     protected Collider coll;
     // Use this for initialization
-    void Start () {
+    void Start() {
         coll = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
-        SlideTime = Timer; 
-	}
+        SlideTime = Timer;
+    }
 
     // Update is called once per frame
     void Update()
@@ -47,7 +48,7 @@ public class PlayerScript : MonoBehaviour {
         {
             if (Canjump == true)
             {
-               
+
                 // rb.AddForce(transform.up * jumpheight * 10);
                 rb.velocity = Vector3.up * jumpheight;
             }
@@ -62,7 +63,7 @@ public class PlayerScript : MonoBehaviour {
             {
                 player.SetActive(true);
                 CanSlide = false;
-                SlideTime = Timer ; 
+                SlideTime = Timer;
             }
         }
 
@@ -71,17 +72,17 @@ public class PlayerScript : MonoBehaviour {
             rb.WakeUp();
         }
     }
-       
-  public void Jump()
+
+    public void Jump()
     {
         //Update();
-        Canjump = true; 
+        Canjump = true;
     }
 
     public void Attack()
     {
         //OnTriggerEnter(coll);
-        CanAttack = true; 
+        CanAttack = true;
     }
     public void Slide()
     {
@@ -93,28 +94,32 @@ public class PlayerScript : MonoBehaviour {
     {
         if (CanAttack == true && coll.tag == "Hitbox")
         {
-           Destroy ( GameObject.FindWithTag("Hitbox"));
-           Debug.Log("Enemy HIt"); 
-           CanAttack = false;
+            Destroy(GameObject.FindWithTag("Hitbox"));
+            Debug.Log("Enemy HIt");
+            CanAttack = false;
         }
         CanAttack = false;
     }
     private void OnCollisionEnter(Collision coll)
     {
-        if(coll.transform.tag == "Enemy" ) 
+        if (coll.transform.tag == "Enemy")
         {
-
-            Destroy(player);
+            isAlive = false; 
         }
         else if (coll.transform.tag == "Trap")
         {
-            Destroy(player);
+            isAlive = false; 
 
         }
-     // else if (coll.transform.tag == "Boxes")
-     // {
-     //     Destroy(player);
-     //
-     // }
+        // else if (coll.transform.tag == "Boxes")
+        // {
+        //     Destroy(player);
+        //
+        // }
+    }
+    bool IsAlive()
+    {
+        return isAlive;
+
     }
 }
