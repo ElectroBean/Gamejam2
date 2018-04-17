@@ -50,6 +50,7 @@ public class PlayerScript : MonoBehaviour {
             {
 
                 // rb.AddForce(transform.up * jumpheight * 10);
+                
                 rb.velocity = Vector3.up * jumpheight;
             }
         }
@@ -57,13 +58,16 @@ public class PlayerScript : MonoBehaviour {
 
         if (CanSlide == true)
         {
-            player.SetActive(false);
+           // player.SetActive(false);
+            player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
             SlideTime += Time.deltaTime;
             if (SlideTime >= 1)
             {
-                player.SetActive(true);
+            //    player.SetActive(true);
                 CanSlide = false;
                 SlideTime = Timer;
+                player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+
             }
         }
 
