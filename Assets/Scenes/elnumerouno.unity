@@ -789,3 +789,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e7261526c99995c48b6e5ab6e25fc61b, type: 3}
   pitchMin: 0
   pitchMax: 3
+--- !u!114 &2000226110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2000226104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676dd487387035248a881da6e1bc382e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
