@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour {
     public bool Canjump = false;
     public bool CanSlide = false;
     public bool CanAttack = false;
-    public bool isAlive = true; 
+    private bool isAlive = true; 
 
     protected Collider coll;
     // Use this for initialization
@@ -117,7 +117,7 @@ public class PlayerScript : MonoBehaviour {
         //
         // }
     }
-    bool IsAlive()
+    public bool IsAlive()
     {
         return isAlive;
 
