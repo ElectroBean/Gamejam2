@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: cf9f9c4c95a222449bd8d2767e7cce32
-timeCreated: 1523922126
+guid: fff1074b615ed1d479f72763838e403a
+timeCreated: 1523935779
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,10 +8,9 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
-    2100002: lambert6
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Pillar
+    4300000: Roof_Trap
     9500000: //RootNode
   externalObjects: {}
   materials:
