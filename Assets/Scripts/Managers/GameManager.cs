@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public float score;
     private float hiscore;
     bool hasSaved = false;
+    public float speedIncrease;
+    public float increaseDelay;
+    public float increaseGap;
 
 
     // Use this for initialization
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour
         CurrentGameState = GameStates.Playing;
         score = 0.0f;
         hiscore = LoadScores();
+        InvokeRepeating("IncreaseSpeed", increaseDelay, increaseGap);
     }
 
     // Update is called once per frame
@@ -60,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void Playing()
     {
-        scrollSpeed += 0.003f;
+        //scrollSpeed += 0.003f;
         score += 1 * Time.deltaTime;
 
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
@@ -108,5 +112,10 @@ public class GameManager : MonoBehaviour
     public float LoadScores()
     {
         return PlayerPrefs.GetFloat("Highest Score");
+    }
+
+    private void IncreaseSpeed()
+    {
+        scrollSpeed += speedIncrease;
     }
 }
