@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     public Text hiscoreText;
     public Text currentScoreText;
 
+    [Header("UI gameobjects")]
+    public GameObject ingameUI;
+    public GameObject gameoverUI;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hiscore = LoadScores();
         if (currentScoreText)
         {
             int scoreI = (int)score;
@@ -85,6 +90,8 @@ public class GameManager : MonoBehaviour
     {
         //scrollSpeed += 0.003f;
         score += 1 * Time.deltaTime;
+        gameoverUI.SetActive(false);
+        ingameUI.SetActive(true);
 
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
         foreach (GameObject go in platforms)
@@ -113,6 +120,8 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        gameoverUI.SetActive(true);
+        ingameUI.SetActive(false);
         if (hiscore < score)
         {
             if (!hasSaved)
@@ -140,5 +149,10 @@ public class GameManager : MonoBehaviour
     private void IncreaseSpeed()
     {
         scrollSpeed += speedIncrease;
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
