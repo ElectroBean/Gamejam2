@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        // if (Physics.Raycast(transform.position,downPosition))
+            // if (Physics.Raycast(transform.position,downPosition))
         if (Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y))
         {
             if (Canjump == true)
@@ -39,12 +39,14 @@ public class PlayerScript : MonoBehaviour {
         {
             player.SetActive(false);
             SlideTime += Time.deltaTime;
-
             if (SlideTime >= 1)
             {
                 player.SetActive(true);
+                CanSlide = false;
+                SlideTime = Timer ; 
             }
         }
+
         if (rb.IsSleeping())
         {
             rb.WakeUp();
