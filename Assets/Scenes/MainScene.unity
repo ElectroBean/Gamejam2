@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.24264705, g: 0.2260112, b: 0.19625865, a: 1}
+  m_AmbientSkyColor: {r: 0.75, g: 0.5, b: 0.25, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -253,7 +253,7 @@ Prefab:
     - target: {fileID: 224387614347254210, guid: cc9c4e439c569944caf3a0bc20105b02,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224387614347254210, guid: cc9c4e439c569944caf3a0bc20105b02,
         type: 2}
@@ -458,7 +458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1337488462
 Prefab:
@@ -497,7 +497,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4611868135233278, guid: 9e445dd87d6b29d4ab76c5581fca25b1, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e445dd87d6b29d4ab76c5581fca25b1, type: 2}
@@ -512,19 +512,19 @@ GameObject:
   - component: {fileID: 1422708202}
   - component: {fileID: 1422708201}
   m_Layer: 0
-  m_Name: Area Light
+  m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1422708201
 Light:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1422708200}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.422, b: 0, a: 1}
@@ -613,53 +613,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e445dd87d6b29d4ab76c5581fca25b1, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1625698627 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114727891687882836, guid: a4a69ea72b7a1514fab377541e7a6c1d,
-    type: 2}
-  m_PrefabInternal: {fileID: 2078160738}
-  m_Script: {fileID: 11500000, guid: e56de92526941ba42a634c304ff99c65, type: 3}
---- !u!1 &1890655447
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1890655449}
-  - component: {fileID: 1890655448}
-  m_Layer: 0
-  m_Name: FPS COUNTER
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1890655448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1890655447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4322fc91db5a4404f97591e9713ffc8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1890655449
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1890655447}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.382568, y: 75.52183, z: -2.756546}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2078160738
+--- !u!1001 &1616185569
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -701,3 +655,49 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4a69ea72b7a1514fab377541e7a6c1d, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1625698627 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114727891687882836, guid: a4a69ea72b7a1514fab377541e7a6c1d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1616185569}
+  m_Script: {fileID: 11500000, guid: e56de92526941ba42a634c304ff99c65, type: 3}
+--- !u!1 &1890655447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1890655449}
+  - component: {fileID: 1890655448}
+  m_Layer: 0
+  m_Name: FPS COUNTER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1890655448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890655447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4322fc91db5a4404f97591e9713ffc8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1890655449
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890655447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.382568, y: 75.52183, z: -2.756546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

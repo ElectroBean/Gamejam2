@@ -9,74 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1177130921662134}
+  m_RootGameObject: {fileID: 1929635548994818}
   m_IsPrefabParent: 1
---- !u!1 &1177130921662134
+--- !u!1 &1066786223619920
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4967741379826380}
+  - component: {fileID: 4530308380258666}
+  - component: {fileID: 33785183144528686}
+  - component: {fileID: 23301947727148478}
+  - component: {fileID: 95977044635568836}
   m_Layer: 0
-  m_Name: Pot
+  m_Name: SpikeTrap Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1647170421588822
+--- !u!1 &1929635548994818
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4358346875412426}
-  - component: {fileID: 33280270247284206}
-  - component: {fileID: 23338131568076306}
-  - component: {fileID: 95362871909011698}
+  - component: {fileID: 4732866314893380}
   m_Layer: 0
-  m_Name: Pot Mesh
+  m_Name: SpikeTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4358346875412426
+--- !u!4 &4530308380258666
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647170421588822}
+  m_GameObject: {fileID: 1066786223619920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.541164, y: 1.5268493, z: -3.8515272}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.291, z: 0}
+  m_LocalScale: {x: 0.21843171, y: 0.21843171, z: 0.21843171}
   m_Children: []
-  m_Father: {fileID: 4967741379826380}
+  m_Father: {fileID: 4732866314893380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4967741379826380
+--- !u!4 &4732866314893380
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1177130921662134}
+  m_GameObject: {fileID: 1929635548994818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.778063, y: 3.1218245, z: -9.380959}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4358346875412426}
+  - {fileID: 4530308380258666}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23338131568076306
+--- !u!23 &23301947727148478
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647170421588822}
+  m_GameObject: {fileID: 1066786223619920}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,7 +85,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f422e81578c14e245bae02dfa8a86bf6, type: 2}
+  - {fileID: 2100000, guid: c366ee55ff72db940bae970e639e5a64, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,22 +105,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33280270247284206
+--- !u!33 &33785183144528686
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647170421588822}
-  m_Mesh: {fileID: 4300000, guid: 637758fc8aa4a4c479f8a7395d33ad8c, type: 3}
---- !u!95 &95362871909011698
+  m_GameObject: {fileID: 1066786223619920}
+  m_Mesh: {fileID: 4300000, guid: c366ee55ff72db940bae970e639e5a64, type: 3}
+--- !u!95 &95977044635568836
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647170421588822}
+  m_GameObject: {fileID: 1066786223619920}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ec13c73c125df4044ad48ef7b5ca230e, type: 3}
+  m_Avatar: {fileID: 9000000, guid: c366ee55ff72db940bae970e639e5a64, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
