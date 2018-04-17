@@ -43,11 +43,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentScoreText)
-        currentScoreText.text = score.ToString();
-        if(hiscoreText)
-        hiscoreText.text = hiscore.ToString();
-  
+        if (currentScoreText)
+        {
+            int scoreI = (int)score;
+            currentScoreText.text = scoreI.ToString();
+
+        }
+        if (hiscoreText)
+        {
+            int hiscoreI = (int)hiscore;
+            hiscoreText.text = hiscoreI.ToString();
+
+        }
+
         switch (CurrentGameState)
         {
             case GameStates.Playing:
@@ -84,7 +92,7 @@ public class GameManager : MonoBehaviour
             go.GetComponent<PlatformMovement>().scrollSpeed = scrollSpeed;
         }
 
-       if(!player.GetComponent<PlayerScript>().IsAlive())
+        if (!player.GetComponent<PlayerScript>().IsAlive())
         {
             CurrentGameState = GameStates.GameOver;
         }
@@ -113,7 +121,7 @@ public class GameManager : MonoBehaviour
                 hasSaved = true;
             }
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             SceneManager.LoadScene(0);
         }
