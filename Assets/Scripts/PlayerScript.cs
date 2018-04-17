@@ -38,6 +38,8 @@ public class PlayerScript : MonoBehaviour
 
     bool startedSlide = false;
 
+    public ParticleSystem attackParticle;
+
     protected Collider coll;
 
     private void Awake()
@@ -164,6 +166,8 @@ public class PlayerScript : MonoBehaviour
     public void Attack()
     {
         //OnTriggerEnter(coll);
+        if (attackParticle)
+        attackParticle.Play();
         audMan.CreateNewAud();
         CanAttack = true;
     }
