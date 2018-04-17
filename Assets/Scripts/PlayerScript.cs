@@ -91,12 +91,30 @@ public class PlayerScript : MonoBehaviour {
     }
     private void OnTriggerStay(Collider coll)
     {
-        if (CanAttack == true && coll.tag == "Enemy")
+        if (CanAttack == true && coll.tag == "Hitbox")
         {
-           Destroy ( GameObject.FindWithTag("Enemy"));
+           Destroy ( GameObject.FindWithTag("Hitbox"));
            Debug.Log("Enemy HIt"); 
            CanAttack = false;
         }
         CanAttack = false;
+    }
+    private void OnCollisionEnter(Collision coll)
+    {
+        if(coll.transform.tag == "Enemy" ) 
+        {
+
+            Destroy(player);
+        }
+        else if (coll.transform.tag == "Trap")
+        {
+            Destroy(player);
+
+        }
+     // else if (coll.transform.tag == "Boxes")
+     // {
+     //     Destroy(player);
+     //
+     // }
     }
 }
