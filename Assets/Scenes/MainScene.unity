@@ -420,6 +420,8 @@ MonoBehaviour:
   increaseGap: 3
   hiscoreText: {fileID: 367851716}
   currentScoreText: {fileID: 1994389770}
+  ingameUI: {fileID: 1282724610}
+  gameoverUI: {fileID: 618300567}
 --- !u!4 &600286093
 Transform:
   m_ObjectHideFlags: 0
@@ -433,6 +435,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &618300567 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1434281825232480, guid: cc9c4e439c569944caf3a0bc20105b02,
+    type: 2}
+  m_PrefabInternal: {fileID: 518389780}
 --- !u!1 &867292133
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +680,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1282724610 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1607814386359198, guid: cc9c4e439c569944caf3a0bc20105b02,
+    type: 2}
+  m_PrefabInternal: {fileID: 518389780}
 --- !u!1001 &1337488462
 Prefab:
   m_ObjectHideFlags: 0
