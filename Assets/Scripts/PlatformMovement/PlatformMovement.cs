@@ -19,7 +19,8 @@ public class PlatformMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        //super dirty
+        Invoke("DestroyAfterTime", 10);
     }
 
     // Update is called once per frame
@@ -56,7 +57,12 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
-    void OnBecameInvisible()
+    //void OnBecameInvisible()
+    //{
+    //    Destroy(gameObject);
+    //}
+
+    private void DestroyAfterTime()
     {
         Destroy(gameObject);
     }
