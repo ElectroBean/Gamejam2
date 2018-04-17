@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Trap
   - Boxes
+  - DestroyBox
   layers:
   - Default
   - TransparentFX
