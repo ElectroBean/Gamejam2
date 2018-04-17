@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
             go.GetComponent<PlatformMovement>().scrollSpeed = scrollSpeed;
         }
 
-       if(!player.GetComponent<PlayerScript>().isAlive())
+       if(!player.GetComponent<PlayerScript>().IsAlive())
         {
             CurrentGameState = GameStates.GameOver;
         }
