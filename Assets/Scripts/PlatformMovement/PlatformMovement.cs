@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformMovement : MonoBehaviour {
-    
+public class PlatformMovement : MonoBehaviour
+{
+
     public float scrollSpeed;
     public EndlessRunner er;
     bool hasSpawnedNext;
     public float lenthOfPlatform;
+    public bool shouldSpawn;
 
     private void Awake()
     {
@@ -15,12 +17,14 @@ public class PlatformMovement : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //transform.position -= Vector3.right * (scrollSpeed * Time.deltaTime);
         //rb.MovePosition(transform.position + -transform.right * moveSpeedRB);
         Scroll();
@@ -28,8 +32,8 @@ public class PlatformMovement : MonoBehaviour {
         //{
         //    Destroy(gameObject);
         //}
-        
-	}
+
+    }
 
     void Scroll()
     {
@@ -38,13 +42,17 @@ public class PlatformMovement : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (shouldSpawn)
         {
-            if(!hasSpawnedNext)
+            if (other.gameObject.tag == "Player")
             {
-                er.SpawnPrefab(transform.position);
-                hasSpawnedNext = true;
+                if (!hasSpawnedNext)
+                {
+                    er.SpawnPrefab(transform.position);
+                    hasSpawnedNext = true;
+                }
             }
+
         }
     }
 
