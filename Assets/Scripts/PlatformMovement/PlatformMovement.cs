@@ -20,7 +20,7 @@ public class PlatformMovement : MonoBehaviour
     void Start()
     {
         //super dirty
-        Invoke("DestroyAfterTime", 20);
+        //Invoke("DestroyAfterTime", 20);
     }
 
     // Update is called once per frame
