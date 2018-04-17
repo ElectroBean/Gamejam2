@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour {
+public class PlayerScript : MonoBehaviour
+{
 
     public GameObject player;
     public Rigidbody rb;
@@ -19,11 +20,23 @@ public class PlayerScript : MonoBehaviour {
     public bool Canjump = false;
     public bool CanSlide = false;
     public bool CanAttack = false;
-    private bool isAlive = true; 
+    private bool isAlive = true;
+
+    private AudioManager audMan;
+    private float walkSoundTimer = 0.45f;
+    private float attackSoundTimer = 0.3f;
+    bool grounded;
 
     protected Collider coll;
+
+    private void Awake()
+    {
+        audMan = GetComponent<AudioManager>();
+    }
+
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         coll = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         SlideTime = Timer;
@@ -32,6 +45,26 @@ public class PlayerScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        attackSoundTimer -= Time.deltaTime;
+        walkSoundTimer -= Time.deltaTime;
+
+        if (grounded && !CanSlide)
+        {
+            if (walkSoundTimer <= 0)
+            {
+                audMan.PlaySound("Walk");
+                walkSoundTimer = 0.45f;
+            }
+        }
+
+        if(CanAttack)
+        {
+            if(attackSoundTimer <= 0)
+            {
+                audMan.PlaySound("Attack");
+                attackSoundTimer = 0.3f;
+            }
+        }
 
         if (rb.velocity.y < 0)
         {
@@ -46,24 +79,35 @@ public class PlayerScript : MonoBehaviour {
         Debug.DrawRay(transform.position, Vector3.down * coll.bounds.extents.y / 2.5f, Color.red);
         if (Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y / 2.5f))
         {
+            grounded = true;
             if (Canjump == true)
             {
 
                 // rb.AddForce(transform.up * jumpheight * 10);
-                
+
                 rb.velocity = Vector3.up * jumpheight;
+                foreach(AudioSource a in GetComponents<AudioSource>())
+                {
+                    a.Stop();
+                }
+                audMan.PlaySound("Jump");
             }
+        }
+        else
+        {
+            grounded = false;
         }
         Canjump = false;
 
         if (CanSlide == true)
         {
-           // player.SetActive(false);
+            // player.SetActive(false);
             player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
             SlideTime += Time.deltaTime;
+            audMan.PlaySound("Slide");
             if (SlideTime >= 1)
             {
-            //    player.SetActive(true);
+                //    player.SetActive(true);
                 CanSlide = false;
                 SlideTime = Timer;
                 player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
@@ -108,11 +152,11 @@ public class PlayerScript : MonoBehaviour {
     {
         if (coll.transform.tag == "Enemy")
         {
-            isAlive = false; 
+            isAlive = false;
         }
         else if (coll.transform.tag == "Trap")
         {
-            isAlive = false; 
+            isAlive = false;
 
         }
         // else if (coll.transform.tag == "Boxes")
