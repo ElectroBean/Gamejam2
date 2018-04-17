@@ -356,9 +356,10 @@ GameObject:
   - component: {fileID: 33072138276064172}
   - component: {fileID: 23763494770815726}
   - component: {fileID: 95929154966895736}
+  - component: {fileID: 64423279222172222}
   m_Layer: 0
   m_Name: Roof_Trap Mesh
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,6 +1101,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1353350753295880}
   m_Mesh: {fileID: 4300000, guid: 2e2b5bb05aa68384eaeac37e12b17ff5, type: 3}
+--- !u!64 &64423279222172222
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872618257659438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: fff1074b615ed1d479f72763838e403a, type: 3}
 --- !u!65 &65006918372595518
 BoxCollider:
   m_ObjectHideFlags: 1

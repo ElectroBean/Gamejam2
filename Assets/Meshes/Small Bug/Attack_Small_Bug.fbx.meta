@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: 20d98117ddd084e46b1805a52c19f3e6
+timeCreated: 1523942881
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Ankle_L
+    100002: Ankle_R
+    100004: Arm_L
+    100006: Arm_R
+    100008: //RootNode
+    100010: Back_head
+    100012: Character_Small_Enemy
+    100014: Chest
+    100016: Chest 1
+    100018: Elbow_L
+    100020: Elbow_L 1
+    100022: Elbow_R
+    100024: Elbow_R 1
+    100026: Floor
+    100028: Foot_L
+    100030: Foot_L 1
+    100032: Foot_R
+    100034: Foot_R 1
+    100036: group
+    100038: Hand_L
+    100040: Hand_R
+    100042: Head
+    100044: Head 1
+    100046: IK_Foot_End_L
+    100048: IK_Foot_End_R
+    100050: ikHandle1
+    100052: ikHandle2
+    100054: Knee_L
+    100056: Knee_L 1
+    100058: Knee_R
+    100060: Knee_R 1
+    100062: left
+    100064: Leg_L
+    100066: Leg_R
+    100068: Neck
+    100070: nurbsCircle2
+    100072: nurbsCircle3
+    100074: pasted__Character_Small_Enemy
+    100076: pasted__Floor
+    100078: pasted__Pillar
+    100080: pasted__Pot
+    100082: pasted__Wall
+    100084: Pillar
+    100086: Player_Character_
+    100088: Pot
+    100090: Root_Player_Character
+    100092: Root_Small_Guardian_Bug
+    100094: Shoulder_L
+    100096: Shoulder_L 1
+    100098: Shoulder_R
+    100100: Shoulder_R 1
+    100102: Small_Guardian_Bug
+    100104: Thigh_L
+    100106: Thigh_R
+    100108: Waist
+    100110: Wall
+    100112: Wall1
+    100114: Wrist_Hand_L
+    100116: Wrist_Hand_R
+    400000: Ankle_L
+    400002: Ankle_R
+    400004: Arm_L
+    400006: Arm_R
+    400008: //RootNode
+    400010: Back_head
+    400012: Character_Small_Enemy
+    400014: Chest
+    400016: Chest 1
+    400018: Elbow_L
+    400020: Elbow_L 1
+    400022: Elbow_R
+    400024: Elbow_R 1
+    400026: Floor
+    400028: Foot_L
+    400030: Foot_L 1
+    400032: Foot_R
+    400034: Foot_R 1
+    400036: group
+    400038: Hand_L
+    400040: Hand_R
+    400042: Head
+    400044: Head 1
+    400046: IK_Foot_End_L
+    400048: IK_Foot_End_R
+    400050: ikHandle1
+    400052: ikHandle2
+    400054: Knee_L
+    400056: Knee_L 1
+    400058: Knee_R
+    400060: Knee_R 1
+    400062: left
+    400064: Leg_L
+    400066: Leg_R
+    400068: Neck
+    400070: nurbsCircle2
+    400072: nurbsCircle3
+    400074: pasted__Character_Small_Enemy
+    400076: pasted__Floor
+    400078: pasted__Pillar
+    400080: pasted__Pot
+    400082: pasted__Wall
+    400084: Pillar
+    400086: Player_Character_
+    400088: Pot
+    400090: Root_Player_Character
+    400092: Root_Small_Guardian_Bug
+    400094: Shoulder_L
+    400096: Shoulder_L 1
+    400098: Shoulder_R
+    400100: Shoulder_R 1
+    400102: Small_Guardian_Bug
+    400104: Thigh_L
+    400106: Thigh_R
+    400108: Waist
+    400110: Wall
+    400112: Wall1
+    400114: Wrist_Hand_L
+    400116: Wrist_Hand_R
+    2000000: left
+    2100000: lambert1
+    2100002: lambert4
+    2300000: Character_Small_Enemy
+    2300002: Floor
+    2300004: pasted__Character_Small_Enemy
+    2300006: pasted__Floor
+    2300008: pasted__Pillar
+    2300010: pasted__Pot
+    2300012: pasted__Wall
+    2300014: Pillar
+    2300016: Pot
+    2300018: Wall
+    2300020: Wall1
+    3300000: Character_Small_Enemy
+    3300002: Floor
+    3300004: pasted__Character_Small_Enemy
+    3300006: pasted__Floor
+    3300008: pasted__Pillar
+    3300010: pasted__Pot
+    3300012: pasted__Wall
+    3300014: Pillar
+    3300016: Pot
+    3300018: Wall
+    3300020: Wall1
+    4300000: Floor
+    4300002: Wall
+    4300004: Pot
+    4300006: Pillar
+    4300008: Character_Small_Enemy
+    4300010: Small_Guardian_Bug
+    4300012: Player_Character_
+    4300014: Wall1
+    4300016: pasted__Floor
+    4300018: pasted__Wall
+    4300020: pasted__Pot
+    4300022: pasted__Pillar
+    4300024: pasted__Character_Small_Enemy
+    7400000: Attack_Small_Bug
+    9500000: //RootNode
+    13700000: Player_Character_
+    13700002: Small_Guardian_Bug
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
