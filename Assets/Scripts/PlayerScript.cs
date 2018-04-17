@@ -36,13 +36,14 @@ public class PlayerScript : MonoBehaviour {
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMulitplier - 1) * Time.deltaTime;
         }
-     //  else if (rb.velocity.y > 0)
-     //  {
-     //      rb.velocity += Vector3.up * Physics.gravity.y * (jumpheight - 1) * Time.deltaTime;
-     // 
-     //  }
+        //  else if (rb.velocity.y > 0)
+        //  {
+        //      rb.velocity += Vector3.up * Physics.gravity.y * (jumpheight - 1) * Time.deltaTime;
+        // 
+        //  }
         // if (Physics.Raycast(transform.position,downPosition))
-        if (Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y))
+        Debug.DrawRay(transform.position, Vector3.down * coll.bounds.extents.y / 2.5f, Color.red);
+        if (Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y / 2.5f))
         {
             if (Canjump == true)
             {
