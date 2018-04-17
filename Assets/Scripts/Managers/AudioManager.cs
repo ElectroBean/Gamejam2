@@ -23,19 +23,13 @@ public class AudioManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        InvokeRepeating("CheckSounds", 1, 1);	
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		foreach(AudioSource a in GetComponents<AudioSource>())
-        {
-            if (!a.isPlaying)
-            {
-                Destroy(a);
-            }
-        }
+		
 	}
 
     public void PlaySound(string clipsToPlay)
@@ -145,5 +139,16 @@ public class AudioManager : MonoBehaviour {
         newAud.pitch = superSuperduperRandPitch;
 
         newAud.Play();
+    }
+
+    private void CheckSounds()
+    {
+        foreach (AudioSource a in GetComponents<AudioSource>())
+        {
+            if (!a.isPlaying)
+            {
+                Destroy(a);
+            }
+        }
     }
 }

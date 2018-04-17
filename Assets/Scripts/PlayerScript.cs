@@ -61,14 +61,14 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        if (CanAttack)
-        {
-            if (attackSoundTimer <= 0)
-            {
-                audMan.PlaySound("Attack");
-                attackSoundTimer = attackSoundDelay;
-            }
-        }
+       // if (CanAttack)
+       // {
+       //     if (attackSoundTimer <= 0)
+       //     {
+       //         //audMan.PlaySound("Attack");
+       //         attackSoundTimer = attackSoundDelay;
+       //     }
+       // }
 
         if (rb.velocity.y < 0)
         {
@@ -139,6 +139,7 @@ public class PlayerScript : MonoBehaviour
     public void Attack()
     {
         //OnTriggerEnter(coll);
+        audMan.CreateNewAud();
         CanAttack = true;
     }
     public void Slide()
