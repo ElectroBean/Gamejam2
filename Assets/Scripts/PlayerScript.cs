@@ -4,33 +4,51 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-    public Rigidbody rb;
-    public float speed;
-    public float jumpheight;
-    public float SlideTime; 
-    private float Sliding;
-    private float Timer; 
-    protected Collider coll;
     public GameObject player;
+    public Rigidbody rb;
+    //player speed
+    public float speed;
+    public float fallMulitplier; 
+    // Jump
+    public float jumpheight;
+    //how long the player will slide
+    public float SlideTime; 
+    //resets slide time
+    private float Timer; 
+
     public bool Canjump = false;
     public bool CanSlide = false;
-    public bool CanAttack = false; 
+    public bool CanAttack = false;
+
+    protected Collider coll;
     // Use this for initialization
     void Start () {
         coll = GetComponent<Collider>();
+        rb = GetComponent<Rigidbody>();
         SlideTime = Timer; 
 	}
 
     // Update is called once per frame
     void Update()
     {
-            // if (Physics.Raycast(transform.position,downPosition))
+
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * (fallMulitplier - 1) * Time.deltaTime;
+        }
+     //  else if (rb.velocity.y > 0)
+     //  {
+     //      rb.velocity += Vector3.up * Physics.gravity.y * (jumpheight - 1) * Time.deltaTime;
+     // 
+     //  }
+        // if (Physics.Raycast(transform.position,downPosition))
         if (Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y))
         {
             if (Canjump == true)
             {
+               
                 // rb.AddForce(transform.up * jumpheight * 10);
-                rb.AddForce(new Vector3(0, jumpheight, 0), ForceMode.Impulse);
+                rb.velocity = Vector3.up * jumpheight;
             }
         }
         Canjump = false;
