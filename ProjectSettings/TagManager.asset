@@ -8,6 +8,9 @@ TagManager:
   - Platform
   - GameManager
   - Enemy
+  - Trap
+  - Boxes
+  - DestroyBox
   layers:
   - Default
   - TransparentFX
