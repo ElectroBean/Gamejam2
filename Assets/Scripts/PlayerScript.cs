@@ -29,6 +29,8 @@ public class PlayerScript : MonoBehaviour
     private float attackSoundTimer = 0.3f;
     bool grounded;
 
+    private SwipeManager sm;
+
     bool startedSlide = false;
 
     protected Collider coll;
@@ -36,6 +38,7 @@ public class PlayerScript : MonoBehaviour
     private void Awake()
     {
         audMan = GetComponent<AudioManager>();
+        sm = GetComponent<SwipeManager>();
     }
 
     // Use this for initialization
@@ -51,6 +54,19 @@ public class PlayerScript : MonoBehaviour
     {
         attackSoundTimer -= Time.deltaTime;
         walkSoundTimer -= Time.deltaTime;
+
+        if(sm.SwipeUp)
+        {
+            Jump();
+        }
+        if(sm.SwipeRight)
+        {
+            Attack();
+        }
+        if(sm.SwipeDown)
+        {
+            Slide();
+        }
 
         if (grounded && !CanSlide)
         {
@@ -144,7 +160,6 @@ public class PlayerScript : MonoBehaviour
     }
     public void Slide()
     {
-        Update();
         startedSlide = true;
         CanSlide = true;
 
