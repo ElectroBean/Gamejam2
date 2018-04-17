@@ -5,7 +5,10 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
     private AudioSource audSource;
-    public AudioClip[] audioClips;
+    public AudioClip[] walkClips;
+    public AudioClip[] slideClips;
+    public AudioClip[] jumpClips;
+    public AudioClip[] attackClips;
     public float pitchMin;
     public float pitchMax;
 
@@ -28,31 +31,105 @@ public class AudioManager : MonoBehaviour {
     {
 		if(Input.GetKeyDown(KeyCode.S))
         {
-            PlaySound();
+            PlaySound("Walk");
         }
 	}
 
-    public void PlaySound()
+    public void PlaySound(string clipsToPlay)
     {
-        if(audioClips.Length == 0)
+        switch (clipsToPlay)
         {
-            return;
-        }
-        int rand = Random.Range(0, audioClips.Length);
-        float randPitch = Random.Range(pitchMin, pitchMax);
-        if (audSource)
-        {
-            audSource.clip = audioClips[rand];
-            audSource.pitch = randPitch;
-        }
-        else
-        {
-            gameObject.AddComponent<AudioSource>();
-            audSource = GetComponent<AudioSource>();
-            audSource.clip = audioClips[rand];
-            audSource.pitch = randPitch;
-        }
+            case "Walk":
+                if (walkClips.Length == 0)
+                {
+                    return;
+                }
+                int rand = Random.Range(0, walkClips.Length);
+                float randPitch = Random.Range(pitchMin, pitchMax);
+                if (audSource)
+                {
+                    audSource.clip = walkClips[rand];
+                    audSource.pitch = randPitch;
+                }
+                else
+                {
+                    gameObject.AddComponent<AudioSource>();
+                    audSource = GetComponent<AudioSource>();
+                    audSource.clip = walkClips[rand];
+                    audSource.pitch = randPitch;
+                }
 
-        audSource.Play();
+                audSource.Play();
+                break;
+
+            case "Slide":
+                if (slideClips.Length == 0)
+                {
+                    return;
+                }
+                int superRand = Random.Range(0, slideClips.Length);
+                float superRandPitch = Random.Range(pitchMin, pitchMax);
+                if (audSource)
+                {
+                    audSource.clip = slideClips[superRand];
+                    audSource.pitch = superRandPitch;
+                }
+                else
+                {
+                    gameObject.AddComponent<AudioSource>();
+                    audSource = GetComponent<AudioSource>();
+                    audSource.clip = slideClips[superRand];
+                    audSource.pitch = superRandPitch;
+                }
+
+                audSource.Play();
+                break;
+
+            case "Attack":
+                if (attackClips.Length == 0)
+                {
+                    return;
+                }
+                int superDuperRand = Random.Range(0, attackClips.Length);
+                float superduperRandPitch = Random.Range(pitchMin, pitchMax);
+                if (audSource)
+                {
+                    audSource.clip = attackClips[superDuperRand];
+                    audSource.pitch = superduperRandPitch;
+                }
+                else
+                {
+                    gameObject.AddComponent<AudioSource>();
+                    audSource = GetComponent<AudioSource>();
+                    audSource.clip = attackClips[superDuperRand];
+                    audSource.pitch = superduperRandPitch;
+                }
+
+                audSource.Play();
+                break;
+
+            case "Jump":
+                if (jumpClips.Length == 0)
+                {
+                    return;
+                }
+                int superSuperDuperRand = Random.Range(0, jumpClips.Length);
+                float superSuperduperRandPitch = Random.Range(pitchMin, pitchMax);
+                if (audSource)
+                {
+                    audSource.clip = jumpClips[superSuperDuperRand];
+                    audSource.pitch = superSuperduperRandPitch;
+                }
+                else
+                {
+                    gameObject.AddComponent<AudioSource>();
+                    audSource = GetComponent<AudioSource>();
+                    audSource.clip = jumpClips[superSuperDuperRand];
+                    audSource.pitch = superSuperduperRandPitch;
+                }
+
+                audSource.Play();
+                break;
+        }
     }
 }
