@@ -6,6 +6,11 @@ public class PlayerScript : MonoBehaviour
 {
 
     public GameObject player;
+    public Animation SprintAnimation;
+    public Animation JumpAnimation;
+    public Animation AttackAnimation;
+    public Animation SlideAnimation;
+    public Collider TopCollider;
     public Rigidbody rb;
     //player speed
     public float speed;
@@ -54,9 +59,10 @@ public class PlayerScript : MonoBehaviour
     {
         attackSoundTimer -= Time.deltaTime;
         walkSoundTimer -= Time.deltaTime;
-
+      //  SprintAnimation.Play(); 
         if(sm.SwipeUp)
         {
+            
             Jump();
         }
         if(sm.SwipeRight)
@@ -104,7 +110,7 @@ public class PlayerScript : MonoBehaviour
             {
 
                 // rb.AddForce(transform.up * jumpheight * 10);
-
+             //   JumpAnimation.Play(); 
                 rb.velocity = Vector3.up * jumpheight;
                 foreach (AudioSource a in GetComponents<AudioSource>())
                 {
@@ -127,7 +133,9 @@ public class PlayerScript : MonoBehaviour
                 audMan.PlaySound("Slide");
                 startedSlide = false;
             }
+           // SlideAnimation.Play(); 
             player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+            TopCollider.enabled = false; 
             SlideTime += Time.deltaTime;
             if (SlideTime >= 1)
             {
@@ -136,6 +144,7 @@ public class PlayerScript : MonoBehaviour
                 startedSlide = false;
                 SlideTime = Timer;
                 player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                TopCollider.enabled = true;
 
             }
         }
@@ -168,6 +177,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (CanAttack == true && coll.tag == "Hitbox")
         {
+       //     AttackAnimation.Play();
             Destroy(GameObject.FindWithTag("Hitbox"));
             Debug.Log("Enemy HIt");
             CanAttack = false;
