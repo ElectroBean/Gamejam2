@@ -305,9 +305,10 @@ GameObject:
   - component: {fileID: 33017347215646614}
   - component: {fileID: 23963469637326186}
   - component: {fileID: 95340855139306988}
+  - component: {fileID: 65401499119467452}
   m_Layer: 0
   m_Name: SpikeTrap Mesh
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,6 +1101,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181733041697544}
   m_Mesh: {fileID: 4300000, guid: 90ed323602a6c2c4681eac005ad12b0e, type: 3}
+--- !u!65 &65401499119467452
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1900525058814180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 0.79, z: 1.8619745}
+  m_Center: {x: -0.000000059604645, y: 0.50746465, z: 0}
 --- !u!65 &65479747107224858
 BoxCollider:
   m_ObjectHideFlags: 1
