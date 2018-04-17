@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,14 @@ public class GameManager : MonoBehaviour
     public float speedIncrease;
     public float increaseDelay;
     public float increaseGap;
+    private GameObject player;
+    public Text hiscoreText;
+    public Text currentScoreText;
 
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     // Use this for initialization
     void Start()
@@ -35,7 +43,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("hiscore" + hiscore);
+        if(currentScoreText)
+        currentScoreText.text = score.ToString();
+        if(hiscoreText)
+        hiscoreText.text = hiscore.ToString();
   
         switch (CurrentGameState)
         {
@@ -73,6 +84,10 @@ public class GameManager : MonoBehaviour
             go.GetComponent<PlatformMovement>().scrollSpeed = scrollSpeed;
         }
 
+       if(!player.GetComponent<PlayerScript>().isAlive())
+        {
+            CurrentGameState = GameStates.GameOver;
+        }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
