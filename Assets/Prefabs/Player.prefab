@@ -19,9 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4941992232326812}
-  - component: {fileID: 65953386196636552}
   - component: {fileID: 114727891687882836}
   - component: {fileID: 54101008708340400}
+  - component: {fileID: 65522509469511716}
+  - component: {fileID: 65332625429659586}
+  - component: {fileID: 114006424545635146}
+  - component: {fileID: 114138152377990366}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -130,7 +133,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65953386196636552
+--- !u!65 &65332625429659586
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -140,8 +143,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 1}
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Size: {x: 1, y: 1.4232838, z: 1}
+  m_Center: {x: 0, y: 0.7087499, z: 0}
+--- !u!65 &65522509469511716
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1604131588126206}
+  m_Material: {fileID: 13400000, guid: 27a73e825738e554d9b833bdbe0ff2ba, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.4232838, z: 1}
+  m_Center: {x: 0, y: 2.38, z: 0}
 --- !u!95 &95931302732975314
 Animator:
   serializedVersion: 3
@@ -159,6 +174,38 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114006424545635146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1604131588126206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57353b20baf206f4ab28f662628fd2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkClips:
+  - {fileID: 8300000, guid: e00f2ad2a1ba52449a0b1eef4ef19fb6, type: 3}
+  slideClips:
+  - {fileID: 8300000, guid: 1860417b7eb74fc4dbda6f68ea49ad3a, type: 3}
+  jumpClips:
+  - {fileID: 8300000, guid: 15567c15a14e95b40a7f7d6c28d9fca6, type: 3}
+  attackClips:
+  - {fileID: 8300000, guid: e7261526c99995c48b6e5ab6e25fc61b, type: 3}
+  pitchMin: 0
+  pitchMax: 3
+--- !u!114 &114138152377990366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1604131588126206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676dd487387035248a881da6e1bc382e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114727891687882836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,6 +218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1747471392929192}
+  SprintAnimation: {fileID: 0}
+  JumpAnimation: {fileID: 0}
+  AttackAnimation: {fileID: 0}
+  SlideAnimation: {fileID: 0}
+  TopCollider: {fileID: 65522509469511716}
   rb: {fileID: 54101008708340400}
   speed: 25
   fallMulitplier: 7
@@ -179,3 +231,5 @@ MonoBehaviour:
   Canjump: 0
   CanSlide: 0
   CanAttack: 0
+  walkSoundDelay: 0.45
+  attackSoundDelay: 0.45
