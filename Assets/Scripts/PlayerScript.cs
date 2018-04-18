@@ -61,6 +61,7 @@ public class PlayerScript : MonoBehaviour
     {
         attackSoundTimer -= Time.deltaTime;
         walkSoundTimer -= Time.deltaTime;
+         
       //  SprintAnimation.Play(); 
         if(sm.SwipeUp)
         {
@@ -145,7 +146,7 @@ public class PlayerScript : MonoBehaviour
                 CanSlide = false;
                 startedSlide = false;
                 SlideTime = Timer;
-                player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                player.transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
                 TopCollider.enabled = true;
 
             }
