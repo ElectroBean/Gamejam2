@@ -42,6 +42,9 @@ public class PlayerScript : MonoBehaviour
 
     protected Collider coll;
 
+    public GameObject smallDeathSound;
+    public GameObject bigDeathSound;
+
     private void Awake()
     {
         audMan = GetComponent<AudioManager>();
@@ -61,18 +64,18 @@ public class PlayerScript : MonoBehaviour
     {
         attackSoundTimer -= Time.deltaTime;
         walkSoundTimer -= Time.deltaTime;
-         
-      //  SprintAnimation.Play(); 
-        if(sm.SwipeUp)
+
+        //  SprintAnimation.Play(); 
+        if (sm.SwipeUp)
         {
-            
+
             Jump();
         }
-        if(sm.SwipeRight)
+        if (sm.SwipeRight)
         {
             Attack();
         }
-        if(sm.SwipeDown)
+        if (sm.SwipeDown)
         {
             Slide();
         }
@@ -86,14 +89,14 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-       // if (CanAttack)
-       // {
-       //     if (attackSoundTimer <= 0)
-       //     {
-       //         //audMan.PlaySound("Attack");
-       //         attackSoundTimer = attackSoundDelay;
-       //     }
-       // }
+        // if (CanAttack)
+        // {
+        //     if (attackSoundTimer <= 0)
+        //     {
+        //         //audMan.PlaySound("Attack");
+        //         attackSoundTimer = attackSoundDelay;
+        //     }
+        // }
 
         if (rb.velocity.y < 0)
         {
@@ -113,7 +116,7 @@ public class PlayerScript : MonoBehaviour
             {
 
                 // rb.AddForce(transform.up * jumpheight * 10);
-             //   JumpAnimation.Play(); 
+                //   JumpAnimation.Play(); 
                 rb.velocity = Vector3.up * jumpheight;
                 foreach (AudioSource a in GetComponents<AudioSource>())
                 {
@@ -136,9 +139,9 @@ public class PlayerScript : MonoBehaviour
                 audMan.PlaySound("Slide");
                 startedSlide = false;
             }
-           // SlideAnimation.Play(); 
+            // SlideAnimation.Play(); 
             player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
-            TopCollider.enabled = false; 
+            TopCollider.enabled = false;
             SlideTime += Time.deltaTime;
             if (SlideTime >= 1)
             {
@@ -168,7 +171,7 @@ public class PlayerScript : MonoBehaviour
     {
         //OnTriggerEnter(coll);
         if (attackParticle)
-        attackParticle.Play();
+            attackParticle.Play();
         audMan.CreateNewAud();
         CanAttack = true;
     }
@@ -182,7 +185,15 @@ public class PlayerScript : MonoBehaviour
     {
         if (CanAttack == true && coll.tag == "Hitbox")
         {
-       //     AttackAnimation.Play();
+            //     AttackAnimation.Play();
+            if (coll.gameObject.GetComponent<Enemy>().type == "Small")
+            {
+                Instantiate(smallDeathSound);
+            }
+            else
+            {
+                Instantiate(bigDeathSound);
+            }
             Destroy(GameObject.FindWithTag("Hitbox"));
             Debug.Log("Enemy HIt");
             CanAttack = false;
