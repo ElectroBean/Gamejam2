@@ -15,6 +15,8 @@ public class PlayerScript : MonoBehaviour
     //player speed
     public float speed;
     public float fallMulitplier;
+
+    private float AttackCooldown = 0.5f;
     // Jump
     public float jumpheight;
     //how long the player will slide
@@ -64,7 +66,15 @@ public class PlayerScript : MonoBehaviour
     {
         attackSoundTimer -= Time.deltaTime;
         walkSoundTimer -= Time.deltaTime;
-
+        if (CanAttack)
+        {
+            AttackCooldown -= Time.deltaTime;
+            if (AttackCooldown <= 0)
+            {
+                CanAttack = false;
+                AttackCooldown += 0.5f;
+            }
+        }
         //  SprintAnimation.Play(); 
         if (sm.SwipeUp)
         {
@@ -201,7 +211,7 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Enemy HIt");
             CanAttack = false;
         }
-        CanAttack = false;
+        //CanAttack = false;
     }
     private void OnCollisionEnter(Collision coll)
     {
