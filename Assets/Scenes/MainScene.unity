@@ -184,7 +184,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -622,12 +622,12 @@ GameObject:
   - component: {fileID: 867292135}
   - component: {fileID: 867292134}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: BG Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &867292134
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1161,6 +1161,33 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 58e0c99475c573f41bba54e8e56ff8a2, type: 2}
+    - target: {fileID: 114727891687882836, guid: a4a69ea72b7a1514fab377541e7a6c1d,
+        type: 2}
+      propertyPath: walkSoundDelay
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114727891687882836, guid: a4a69ea72b7a1514fab377541e7a6c1d,
+        type: 2}
+      propertyPath: bigDeathSound
+      value: 
+      objectReference: {fileID: 1330900959965444, guid: 547e8c8f755d3574a8c1843f4177dc5f,
+        type: 2}
+    - target: {fileID: 114727891687882836, guid: a4a69ea72b7a1514fab377541e7a6c1d,
+        type: 2}
+      propertyPath: smallDeathSound
+      value: 
+      objectReference: {fileID: 1272514680707988, guid: 0f92e33752d19dd44adee0773f9bb4ad,
+        type: 2}
+    - target: {fileID: 114727891687882836, guid: a4a69ea72b7a1514fab377541e7a6c1d,
+        type: 2}
+      propertyPath: attackSoundDelay
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114727891687882836, guid: a4a69ea72b7a1514fab377541e7a6c1d,
+        type: 2}
+      propertyPath: SlideTime
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4a69ea72b7a1514fab377541e7a6c1d, type: 2}
   m_IsPrefabParent: 0
@@ -1185,7 +1212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1890655448
 MonoBehaviour:
   m_ObjectHideFlags: 0
