@@ -139,9 +139,15 @@ public class PlayerScript : MonoBehaviour
                 audMan.PlaySound("Slide");
                 startedSlide = false;
             }
+<<<<<<< HEAD
             // SlideAnimation.Play(); 
             player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
             TopCollider.enabled = false;
+=======
+           // SlideAnimation.Play(); 
+            player.transform.rotation = Quaternion.Euler(new Vector3(180, 0, 90));
+            TopCollider.enabled = false; 
+>>>>>>> e66a9889ffefb3213711aa654bb2c646ef9f0bfb
             SlideTime += Time.deltaTime;
             if (SlideTime >= 1)
             {
